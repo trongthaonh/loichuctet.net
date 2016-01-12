@@ -1,0 +1,32 @@
+// Font weights
+$extra-light: 100;
+$light: 200;
+$regular: 400;
+$bold: 600;
+$extra-bold: 800;
+$ultra-bold: 900;
+
+// Base Font
+//@import url(https://fonts.googleapis.com/css?family=Kanit:400,100,100italic,200italic,200,300,300italic,900,800italic,900italic,800,700italic,700,600italic,600,500italic,500,400italic);
+$base-font-family: 'Kanit', sans-serif;
+$base-font-weight: $light;
+$base-font-size: 16px;
+$base-line-height: 1.4;
+
+// Colors
+$header-bg: #e40d11;
+$text-default: #9a0203;
+
+
+// Layout
+$header-height: 55px;
+$sidebar-width: 428px;
+
+
+//
+// Components
+//
+
+// Tabs
+$vertical-tabs-width: 98px;
+$vertical-tabs-content-width: $sidebar-width - $vertical-tabs-width;

@@ -1,0 +1,23 @@
+#header{
+  @include box-center-valign-content($header-height);
+  background: $header-bg;
+  position: relative;
+  z-index: 1000;
+
+  .cay-mai{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .logo{
+    margin: -4px 0 0;
+    margin-left: 212px;
+    display: inline-block;
+  }
+
+  .happy-new-year{
+    float: right;
+    margin: 6px 183px 0 0;
+  }
+}

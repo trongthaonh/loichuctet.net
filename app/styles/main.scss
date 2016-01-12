@@ -1,9 +1,32 @@
-@import 'vars';
-@import 'typography';
+// Variables + Mixins + Functions
+@import "helpers/variables"; // Always include variable 1st !
+@import "helpers/mixins";
 
-body {
-  font-family: Helvetica, sans-serif;
-  color: $font-color--dark;
-  background-color: $background--light;
-  padding: $half-space;
-}
+
+// Base
+@import "base/normalize"; // Reset
+@import "base/cross-browsers-fix";  // Some fix & helper class included with H5BP package
+@import "base/typography";
+
+
+// Vendors
+// Import jQuery lib, Bootstrap ... etc
+
+
+// Themes
+// If we have themes, import specific styles here
+
+
+// Layout
+@import "layout/header";
+@import "layout/sidebar";
+@import "layout/main";
+
+
+// Components
+@import "components/button";
+@import "components/tabs";
+
+
+// Page specific styles
+@import "pages/home";

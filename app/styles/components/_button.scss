@@ -1,0 +1,23 @@
+.button{
+  text-align: center;
+  height: 70px;
+  width: 280px;
+
+  &.styled-button{
+    @include border-radius(8px);
+    border: solid 4px #e40d11;
+    color: #e40d11;
+    background: #facc3c;
+  }
+
+  &.button-with-image{
+    position: relative;
+
+    img{
+      @include vertical-align();
+
+      position: absolute;
+      left: -30px;
+    }
+  }
+}
