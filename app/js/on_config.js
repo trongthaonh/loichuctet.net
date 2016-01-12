@@ -8,9 +8,21 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider) {
   $stateProvider
   .state('Home', {
     url: '/',
-    controller: 'ExampleCtrl as home',
-    templateUrl: 'home.html',
-    title: 'Home'
+    title: 'Home',
+    views : {
+      "header" : {
+        templateUrl : "_header.html",
+        controller: 'HeaderController'
+      },
+      "sidebar" : {
+        templateUrl : "_sidebar.html",
+        controller: 'SidebarController'
+      },
+      "main" : {
+        templateUrl : "_main.html",
+        controller: 'MainController'
+      }
+    }
   });
 
   $urlRouterProvider.otherwise('/');
