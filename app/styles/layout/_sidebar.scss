@@ -2,4 +2,20 @@
   width: $sidebar-width;
   background: url("../images/sidebar-bg-pattern.png") #fcd96a;
   height: 100%;
+
+  .search-txt{
+    position: fixed;
+    top: 85px;
+    z-index: 10000;
+
+    input{
+      width: 285px;
+    }
+
+    img{
+      position: absolute;
+      left: 0;
+      top: -21px;
+    }
+  }
 }

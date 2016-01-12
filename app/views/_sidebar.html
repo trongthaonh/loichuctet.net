@@ -1,20 +1,26 @@
 <ul class="vertical-tabs">
-  <li><a ui-sref="#">Search</a></li>
-  <li class="active"><a ui-sref="#">Layout</a></li>
-  <li><a ui-sref="#">Text</a></li>
+  <li>
+    <a ng-class="{ 'active' : activeTab === 'layout' }" ng-click="activeTheTab('layout')">
+      <span class="icon-insert-template"></span>Mẫu
+    </a>
+  </li>
+  <li>
+    <a ng-class="{ 'active' : activeTab === 'font' }" ng-click="activeTheTab('font')">
+      <span class="icon-font"></span> Kiểu chữ</a>
+  </li>
 </ul>
 
 <div class="vertical-tabs-content">
-  <div class="tab"><img src="images/layout-thiep-01.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-02.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-03.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-04.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-01.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-02.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-03.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-04.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-01.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-02.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-03.jpg"></div>
-  <div class="tab"><img src="images/layout-thiep-04.jpg"></div>
+  <div class="tab layout-tab" ng-class="{ 'active' : activeTab === 'layout' }">
+    <div class="list-item search-txt">
+      <input type="text" placeholder="Tìm kiếm">
+      <img src="images/sidebar-img-monkey-search.png">
+    </div>
+    <div class="list-item" ng-repeat="l in layoutList" ng-click="selectTheLayout(l)">
+      <img ng-src="{{ l }}">
+    </div>
+  </div>
+  <div class="tab font-tab" ng-class="{ 'active' : activeTab === 'font' }">
+    Font-size
+  </div>
 </div>

@@ -1,0 +1,8 @@
+input[type="text"]{
+  border: solid 4px #e40d11;
+  color: #e40d11;
+  background: #facc3c;
+  padding: 0 10px;
+
+  @include box-center-valign-content($input-height)
+}

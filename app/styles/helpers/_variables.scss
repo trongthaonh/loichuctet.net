@@ -7,10 +7,9 @@ $extra-bold: 800;
 $ultra-bold: 900;
 
 // Base Font
-//@import url(https://fonts.googleapis.com/css?family=Kanit:400,100,100italic,200italic,200,300,300italic,900,800italic,900italic,800,700italic,700,600italic,600,500italic,500,400italic);
-$base-font-family: 'Kanit', sans-serif;
-$base-font-weight: $light;
-$base-font-size: 16px;
+$base-font-family: 'Qwigley', serif;
+$base-font-weight: $regular;
+$base-font-size: 30px;
 $base-line-height: 1.4;
 
 // Colors
@@ -30,3 +29,8 @@ $sidebar-width: 428px;
 // Tabs
 $vertical-tabs-width: 98px;
 $vertical-tabs-content-width: $sidebar-width - $vertical-tabs-width;
+
+
+// Forms
+$input-height: 55px;
+$input-default-margin: 20px;

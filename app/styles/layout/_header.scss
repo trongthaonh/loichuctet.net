@@ -1,5 +1,7 @@
 #header{
   @include box-center-valign-content($header-height);
+  @include  box-shadow();
+
   background: $header-bg;
   position: relative;
   z-index: 1000;
