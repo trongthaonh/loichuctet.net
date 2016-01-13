@@ -1,26 +1,32 @@
 <ul class="vertical-tabs">
   <li>
-    <a ng-class="{ 'active' : activeTab === 'layout' }" ng-click="activeTheTab('layout')">
+    <a ng-class="{ 'active' : sidebar.data.activeTab === 'layout' }"
+       ng-click="sidebar.selectTheTab('layout')">
       <span class="icon-insert-template"></span>Mẫu
     </a>
   </li>
   <li>
-    <a ng-class="{ 'active' : activeTab === 'font' }" ng-click="activeTheTab('font')">
+    <a ng-class="{ 'active' : sidebar.data.activeTab === 'font' }"
+       ng-click="sidebar.selectTheTab('font')">
       <span class="icon-font"></span> Kiểu chữ</a>
   </li>
 </ul>
 
 <div class="vertical-tabs-content">
-  <div class="tab layout-tab" ng-class="{ 'active' : activeTab === 'layout' }">
+  <div class="tab layout-tab"
+       ng-class="{ 'active' : sidebar.data.activeTab === 'layout' }">
     <div class="list-item search-txt">
       <input type="text" placeholder="Tìm kiếm">
       <img src="images/sidebar-img-monkey-search.png">
     </div>
-    <div class="list-item" ng-repeat="l in layoutList" ng-click="selectTheLayout(l)">
+    <div class="list-item"
+         ng-repeat="l in sidebar.data.layoutList"
+         ng-click="sidebar.selectTheLayout(l)">
       <img ng-src="{{ l }}">
     </div>
   </div>
-  <div class="tab font-tab" ng-class="{ 'active' : activeTab === 'font' }">
+  <div class="tab font-tab"
+       ng-class="{ 'active' : sidebar.data.activeTab === 'font' }">
     Font-size
   </div>
 </div>

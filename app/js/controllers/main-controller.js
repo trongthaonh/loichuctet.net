@@ -1,9 +1,11 @@
 'use strict';
 
-function MainController($scope, SidebarService) {
+function MainController(SidebarService) {
   'ngInject';
 
-  $scope.selectingLayout = SidebarService.getSelectingLayout();
+  const main = this;
+
+  main.sidebarData = SidebarService.data;
 }
 
 export default {

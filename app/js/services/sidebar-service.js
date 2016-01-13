@@ -5,15 +5,16 @@ function SidebarService() {
 
   const service = {};
 
-  service.selectingLayout = '';
-
-  //service.setSelectingLayout = function(_layout){
-  //  selectingLayout = _layout;
-  //};
-  //
-  //service.getSelectingLayout = function(){
-  //  return selectingLayout;
-  //};
+  service.data = {
+    activeTab : 'layout',
+    selectingLayout: '',
+    layoutList: [
+      'images/layout-thiep-01.jpg',
+      'images/layout-thiep-02.jpg',
+      'images/layout-thiep-03.jpg',
+      'images/layout-thiep-04.jpg'
+    ]
+  };
 
   return service;
 }

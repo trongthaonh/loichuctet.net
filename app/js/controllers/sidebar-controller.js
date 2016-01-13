@@ -1,24 +1,19 @@
 'use strict';
 
-function SidebarController($scope, SidebarService) {
+function SidebarController(SidebarService) {
   'ngInject';
 
-  $scope.layoutList = [
-    'images/layout-thiep-01.jpg',
-    'images/layout-thiep-02.jpg',
-    'images/layout-thiep-03.jpg',
-    'images/layout-thiep-04.jpg'
-  ];
+  const sidebar = this;
 
-  $scope.selectTheLayout = function(_layout){
-    SidebarService.setSelectingLayout(_layout);
-    //SidebarService.setSelectingLayout(_layout);
+  sidebar.data = SidebarService.data;
+
+  sidebar.selectTheTab = function (_tabName) {
+    sidebar.data.activeTab = _tabName;
   };
 
-  $scope.activeTab = "layout";
-  $scope.activeTheTab = function(_tabName){
-    $scope.activeTab = _tabName;
-  }
+  sidebar.selectTheLayout = function(_layout){
+    sidebar.data.selectingLayout = _layout;
+  };
 }
 
 export default {
