@@ -5,9 +5,9 @@
 
   &.styled-button{
     @include border-radius(8px);
-    border: solid 4px #e40d11;
-    color: #e40d11;
-    background: #facc3c;
+    border: solid 4px $base-color;
+    color: $base-color;
+    background: $main-color;
 
     font-family: $base-font-family;
     font-size: 40px;
@@ -22,5 +22,9 @@
       position: absolute;
       left: -30px;
     }
+  }
+
+  &:focus{
+    outline: none;
   }
 }

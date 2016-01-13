@@ -1,8 +1,12 @@
 input[type="text"]{
-  border: solid 4px #e40d11;
-  color: #e40d11;
-  background: #facc3c;
+  border: solid 4px $base-color;
+  color: $base-color;
+  background: $main-color;
   padding: 0 10px;
 
-  @include box-center-valign-content($input-height)
+  @include box-center-valign-content($input-height);
+
+  &:focus{
+    outline: none;
+  }
 }

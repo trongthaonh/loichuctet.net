@@ -13,7 +13,10 @@ $base-font-size: 30px;
 $base-line-height: 1.4;
 
 // Colors
-$header-bg: #e40d11;
+$base-color: #e40d11;
+$main-color: #facc3c;
+
+$header-bg: $base-color;
 $text-default: #9a0203;
 
 
