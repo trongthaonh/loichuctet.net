@@ -4,6 +4,8 @@
   left: $sidebar-width;
   right: 0;
   bottom: 0;
+  padding: 40px;
+  padding-right: 0;
 
   //.cay-dao{
   //  position: absolute;
@@ -28,20 +30,21 @@
   .paper-wrap{
     background: url("../images/main-bg-editing-area.jpg") center center;
     position: relative;
-    margin: 25px 0 0 25px;
-    padding: 35px 0;
+    height: 100%;
 
     .editing-area{
       width: 810px;
       height: 450px;
       margin: 0 auto;
+
+      @include vertical-align();
     }
 
     .buttons{
-      display: block;
       width: 100%;
       text-align: center;
-      margin-top: 30px;
+      position: absolute;
+      bottom: 100px;
 
       .button:first-child{
         margin-right: 45px;
