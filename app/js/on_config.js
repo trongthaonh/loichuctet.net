@@ -12,15 +12,15 @@ function OnConfig($stateProvider, $locationProvider, $urlRouterProvider) {
     views : {
       "header" : {
         templateUrl : "_header.html",
-        controller: 'HeaderController'
+        controller: 'HeaderController as header'
       },
       "sidebar" : {
         templateUrl : "_sidebar.html",
-        controller: 'SidebarController'
+        controller: 'SidebarController as sidebar'
       },
       "main" : {
         templateUrl : "_main.html",
-        controller: 'MainController'
+        controller: 'MainController as main'
       }
     }
   });
