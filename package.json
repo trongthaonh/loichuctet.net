@@ -75,5 +75,8 @@
     "test": "karma start test/karma.conf.js",
     "preprotractor": "webdriver-manager update",
     "protractor": "protractor test/protractor.conf.js"
+  },
+  "dependencies": {
+    "angular-cropper": "^0.8.3"
   }
 }

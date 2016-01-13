@@ -9,6 +9,8 @@ import './filters';
 import './controllers';
 import './services';
 import './directives';
+import 'angular-file-reader';
+import 'angular-cropper';
 
 // create and bootstrap application
 const requires = [
@@ -17,13 +19,15 @@ const requires = [
   'app.filters',
   'app.controllers',
   'app.services',
-  'app.directives'
+  'app.directives',
+  'tw.directives.cropper'
 ];
 
 // mount on window for testing
 window.app = angular.module('app', requires);
 
 angular.module('app').constant('AppSettings', require('./constants'));
+angular.module('app').constant('_', require('lodash'));
 
 angular.module('app').config(require('./on_config'));
 
