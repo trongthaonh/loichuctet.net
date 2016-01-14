@@ -74,10 +74,13 @@
   "scripts": {
     "test": "karma start test/karma.conf.js",
     "preprotractor": "webdriver-manager update",
-    "protractor": "protractor test/protractor.conf.js"
+    "protractor": "protractor test/protractor.conf.js",
+    "postinstall": "gulp prod",
+    "start": "node index.js"
   },
   "dependencies": {
     "angular-cropper": "^0.8.3",
+    "express": "^4.13.3",
     "hn-html2canvas": "^4.0.0"
   }
 }
