@@ -77,6 +77,7 @@
     "protractor": "protractor test/protractor.conf.js"
   },
   "dependencies": {
-    "angular-cropper": "^0.8.3"
+    "angular-cropper": "^0.8.3",
+    "hn-html2canvas": "^4.0.0"
   }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-function MainController(SidebarService, _) {
+function MainController(SidebarService, _, Html2CanvasService) {
   'ngInject';
 
   const main = this;
@@ -13,6 +13,12 @@ function MainController(SidebarService, _) {
 
   main.handle = function handle(dataURL) {
     // Do your uploading here
+  };
+
+  main.captureCard = function(){
+    html2canvas(document.body).then(function(canvas) {
+      document.body.appendChild(canvas);
+    });
   };
 }
 
