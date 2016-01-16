@@ -1,32 +1,26 @@
-<!--<img class="cay-dao" src="images/main-cay-dao.png">-->
+<img class="cay-dao" src="images/main-cay-dao.png">
 <div class="paper-wrap">
   <img class="happy-2016" src="images/main-happy-2016.png">
-<style>
-  .cropper {
-    border-radius: 8px;
-    border: 2px dashed #000;
-  }
-</style>
   <div class="editing-area">
-    <div>
-      <h3>First, choose a file</h3>
-      <input type="file" simple-change="main.fileChanged($event)" accept="image/*">
-    </div>
+    <!--<div>-->
+      <!--<h3>First, choose a file</h3>-->
+      <!--<input type="file" simple-change="main.fileChanged($event)" accept="image/*">-->
+    <!--</div>-->
 
-    <div>
-      <h3>Then, crop it</h3>
-      <canvas class="cropper" width="300" height="300" tw-cropper="cropper" source="main.file"></canvas>
-    </div>
+    <!--<div>-->
+      <!--<h3>Then, crop it</h3>-->
+      <!--<canvas class="cropper" width="300" height="300" tw-cropper="cropper" source="main.file"></canvas>-->
+    <!--</div>-->
 
-    <div ng-show="main.file">
-      <h3>When you're done, use it</h3>
-      <button ng-click="crop = cropper.toDataURL()">Save</button>
-    </div>
+    <!--<div ng-show="main.file">-->
+      <!--<h3>When you're done, use it</h3>-->
+      <!--<button ng-click="crop = cropper.toDataURL()">Save</button>-->
+    <!--</div>-->
 
-    <div ng-show="crop">
-      <h3>Result:</h3>
-      <img ng-src="{{crop}}">
-    </div>
+    <!--<div ng-show="crop">-->
+      <!--<h3>Result:</h3>-->
+      <!--<img ng-src="{{crop}}">-->
+    <!--</div>-->
 
     <img ng-src="{{ main.sidebarData.selectingLayout }}">
   </div>

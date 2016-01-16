@@ -7,12 +7,13 @@ function SidebarService() {
 
   service.data = {
     activeTab : 'layout',
-    selectingLayout: '',
+    selectingLayout: 'images/layout-thiep-05.jpg',
     layoutList: [
       'images/layout-thiep-01.jpg',
       'images/layout-thiep-02.jpg',
       'images/layout-thiep-03.jpg',
-      'images/layout-thiep-04.jpg'
+      'images/layout-thiep-04.jpg',
+      'images/layout-thiep-05.jpg'
     ]
   };
 

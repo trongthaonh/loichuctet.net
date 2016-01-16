@@ -6,48 +6,37 @@
   bottom: 0;
   padding: 40px;
   padding-right: 0;
+  overflow: auto;
 
-  //.cay-dao{
-  //  position: absolute;
-  //  left: 0;
-  //  top: 0;
-  //  z-index: 10;
-  //  //display: none;
-  //
-  //  @include desktop-sm{
-  //    display: none;
-  //  }
-  //}
-
-  .happy-2016{
+  .cay-dao{
     position: absolute;
+    left: 0;
+    top: 0;
     z-index: 10;
-    bottom: 0;
-    right: 0;
-    width: 150px;
+    width: 15%;
   }
 
   .paper-wrap{
     background: url("../images/main-bg-editing-area.jpg") center center;
     position: relative;
-    height: 100%;
+    text-align: center;
+    padding: 40px;
+
+    .happy-2016{
+      position: absolute;
+      z-index: 10;
+      bottom: 0;
+      right: 0;
+      width: 150px;
+    }
 
     .editing-area{
-      width: 810px;
-      height: 450px;
-      margin: 0 auto;
-
-      @include vertical-align();
+      margin-bottom: 40px;
     }
 
     .buttons{
-      width: 100%;
-      text-align: center;
-      position: absolute;
-      bottom: 100px;
-
       .button:first-child{
-        margin-right: 45px;
+        margin-right: 40px;
       }
     }
   }
