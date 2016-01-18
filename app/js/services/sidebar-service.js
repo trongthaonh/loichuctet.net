@@ -20,7 +20,7 @@ function SidebarService() {
   return service;
 }
 
-export default {
+export default [{
   name: 'SidebarService',
   fn: SidebarService
-};
+}];
