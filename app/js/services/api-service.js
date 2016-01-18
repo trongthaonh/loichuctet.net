@@ -43,10 +43,63 @@ function UserApiService($resource, AppSettings) {
   );
 }
 
+
+function ContainerApiService($resource, AppSettings) {
+  'ngInject';
+
+  return $resource(
+    AppSettings.apiUrl + "/containers/:id",{ id: "@id" },
+    {
+      "getContainers": {
+        isArray: true,
+        url: AppSettings.apiUrl + "/containers",
+        method: "GET"
+      },
+      "createContainer": {
+        url: AppSettings.apiUrl + "/containers",
+        method: "POST"
+      },
+      "destroyContainer": {
+        url: AppSettings.apiUrl + "/containers/:container",
+        method: "DELETE"
+      },
+      "getContainer": {
+        url: AppSettings.apiUrl + "/containers/:container",
+        method: "GET"
+      },
+      "getFiles": {
+        isArray: true,
+        url: AppSettings.apiUrl + "/containers/:container/files",
+        method: "GET"
+      },
+      "getFile": {
+        url: AppSettings.apiUrl + "/containers/:container/files/:file",
+        method: "GET"
+      },
+      "removeFile": {
+        url: AppSettings.apiUrl + "/containers/:container/files/:file",
+        method: "DELETE"
+      },
+      "upload": {
+        url: AppSettings.apiUrl + "/containers/:container/upload",
+        method: "POST"
+      },
+      "download": {
+        url: AppSettings.apiUrl + "/containers/:container/download/:file",
+        method: "GET"
+      }
+    }
+  );
+}
+
 export default [
   {
     name: 'UserApiService',
     fn: UserApiService
+  },
+  {
+    name: 'ContainerApiService',
+    fn: ContainerApiService
   }
 ];
 
