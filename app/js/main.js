@@ -4,6 +4,7 @@ import angular from 'angular';
 
 // angular modules
 import 'angular-ui-router';
+import 'angular-resource';
 import './templates';
 import './filters';
 import './controllers';
@@ -21,7 +22,8 @@ const requires = [
   'app.controllers',
   'app.services',
   'app.directives',
-  'tw.directives.cropper'
+  'tw.directives.cropper',
+  'ngResource'
 ];
 
 // mount on window for testing

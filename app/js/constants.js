@@ -2,7 +2,7 @@
 
 const AppSettings = {
   appTitle: 'Example Application',
-  apiUrl: '/api/v1'
+  apiUrl: 'http://localhost:5001/resources'
 };
 
 export default AppSettings;
