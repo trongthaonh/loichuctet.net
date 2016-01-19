@@ -20,9 +20,9 @@
       <img src="images/sidebar-img-monkey-search.png">
     </div>
     <div class="list-item"
-         ng-repeat="l in sidebar.data.layoutList"
+         ng-repeat="l in sidebar.data.layouts"
          ng-click="sidebar.selectTheLayout(l)">
-      <img ng-src="{{ l }}">
+      <img ng-src="{{ l.background.url }}">
     </div>
   </div>
   <div class="tab font-tab"

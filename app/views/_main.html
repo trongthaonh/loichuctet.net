@@ -22,7 +22,26 @@
       <!--<img ng-src="{{crop}}">-->
     <!--</div>-->
 
-    <img ng-src="{{ main.sidebarData.selectingLayout }}">
+    <div class="card-layout" ng-style="main.sidebarData.selectingLayout.background">
+      <img ng-src="{{ main.sidebarData.selectingLayout.background.url }}">
+
+      <!-- Canvas holding selected image -->
+      <canvas class="image-placeholder canvas"
+              tw-cropper="cropper"
+              source="main.file"
+              ng-style="main.sidebarData.selectingLayout.imagePlaceholder"></canvas>
+
+      <div id="btn-select-file"
+           ng-style="main.sidebarData.selectingLayout.btnSelectImage">
+        <input type="file"
+               simple-change="main.fileChanged($event)"
+               accept="image/*">
+        <label>Choose image</label>
+      </div>
+      <div class="card-message" ng-style="main.sidebarData.selectingLayout.messagePlaceholder">
+        {{ main.cardMessage }}
+      </div>
+    </div>
   </div>
 
   <div class="buttons">
