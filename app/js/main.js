@@ -12,6 +12,7 @@ import './services';
 import './directives';
 import 'angular-file-reader';
 import 'angular-cropper';
+import 'angularjs-facebook';
 import html2canvas from 'hn-html2canvas';
 
 // create and bootstrap application
@@ -23,7 +24,8 @@ const requires = [
   'app.services',
   'app.directives',
   'tw.directives.cropper',
-  'ngResource'
+  'ngResource',
+  'facebook'
 ];
 
 // mount on window for testing

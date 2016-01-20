@@ -1,7 +1,9 @@
 'use strict';
 
-function OnConfig($stateProvider, $locationProvider, $urlRouterProvider) {
+function OnConfig($stateProvider, $locationProvider, $urlRouterProvider, FacebookProvider) {
   'ngInject';
+
+  FacebookProvider.init('1252568694759524');
 
   $locationProvider.html5Mode(true);
 

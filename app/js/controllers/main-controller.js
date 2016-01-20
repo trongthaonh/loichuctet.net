@@ -1,6 +1,6 @@
 'use strict';
 
-function MainController(SidebarService, _, Html2CanvasService) {
+function MainController(SidebarService, _, Html2CanvasService, Facebook) {
   'ngInject';
 
   const main = this;
@@ -18,9 +18,12 @@ function MainController(SidebarService, _, Html2CanvasService) {
   };
 
   main.captureCard = function(){
-    html2canvas(document.body).then(function(canvas) {
-      document.body.appendChild(canvas);
-    });
+    Facebook.login(function(response) {
+      html2canvas(document.body).then(function(canvas) {
+        var image = canvas.toDataURL('image/png').replace("image/png", "image/octet-stream");
+        window.location.href = image;
+      });
+    }, {scope: 'public_profile, user_friends'});
   };
 }
 

@@ -78,8 +78,9 @@
   },
   "dependencies": {
     "angular-cropper": "^0.8.3",
-    "jquery": "*",
     "angular-resource": "^1.4.8",
-    "hn-html2canvas": "^4.0.0"
+    "angularjs-facebook": "^0.2.3",
+    "hn-html2canvas": "^4.0.0",
+    "jquery": "*"
   }
 }
