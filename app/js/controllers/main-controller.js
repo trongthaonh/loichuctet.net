@@ -19,9 +19,14 @@ function MainController(SidebarService, _, Html2CanvasService, Facebook) {
 
   main.captureCard = function(){
     Facebook.login(function(response) {
-      html2canvas(document.body).then(function(canvas) {
-        var image = canvas.toDataURL('image/png').replace("image/png", "image/octet-stream");
-        window.location.href = image;
+      document.getElementById("main").style.overflow = 'visible';
+      var cardLayout = document.getElementsByClassName("card-layout");
+      html2canvas(cardLayout, {
+        onrendered: function(canvas) {
+          document.getElementById("main").style.overflow = 'auto';
+          var image = canvas.toDataURL('image/png').replace("image/png", "image/octet-stream");
+          window.location.href = image;
+        }
       });
     }, {scope: 'public_profile, user_friends'});
   };
