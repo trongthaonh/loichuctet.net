@@ -80,6 +80,7 @@
     "angular-cropper": "^0.8.3",
     "angular-resource": "^1.4.8",
     "angularjs-facebook": "^0.2.3",
+    "angular-color-picker": "*",
     "hn-html2canvas": "^4.0.0",
     "jquery": "*"
   }
