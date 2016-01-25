@@ -14,6 +14,7 @@ import 'angular-file-reader';
 import 'angular-cropper';
 import 'angularjs-facebook';
 import html2canvas from 'hn-html2canvas';
+import 'angular-color-picker';
 
 // create and bootstrap application
 const requires = [
@@ -25,7 +26,8 @@ const requires = [
   'app.directives',
   'tw.directives.cropper',
   'ngResource',
-  'facebook'
+  'facebook',
+  'mp.colorPicker'
 ];
 
 // mount on window for testing

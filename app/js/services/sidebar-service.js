@@ -33,8 +33,8 @@ function SidebarService($http, _) {
           left: '60px',
           width: '420px',
           fontSize: '24px',
-          fontFamily: 'inherit'
-          //height: '300px'
+          fontFamily: 'inherit',
+          color: "#FACC3C"
         }
       }
     ]
