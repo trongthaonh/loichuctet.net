@@ -14,6 +14,8 @@ function SidebarController(SidebarService) {
   sidebar.selectTheLayout = function(_layout){
     sidebar.data.selectingLayout = _layout;
   };
+
+  sidebar.data.selectingLayout.fontFamily
 }
 
 export default {

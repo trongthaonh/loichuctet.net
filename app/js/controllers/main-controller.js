@@ -6,7 +6,7 @@ function MainController(SidebarService, _, Html2CanvasService, Facebook) {
   const main = this;
 
   main.sidebarData = SidebarService.data;
-  main.cardMessage = "YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO ";
+  main.cardMessage = "Năm mới Tết đến Rước hên vào nhà Quà cáp bao la Mọi nhà no đủ";
 
 
   main.fileChanged = function(event) {
@@ -19,6 +19,9 @@ function MainController(SidebarService, _, Html2CanvasService, Facebook) {
 
   main.captureCard = function(){
     Facebook.login(function(response) {
+      Facebook.api('me/photos?fields=source,name,id', function(_res){
+        console.log(_res);
+      });
       document.getElementById("main").style.overflow = 'visible';
       var cardLayout = document.getElementsByClassName("card-layout");
       html2canvas(cardLayout, {
@@ -28,7 +31,7 @@ function MainController(SidebarService, _, Html2CanvasService, Facebook) {
           window.location.href = image;
         }
       });
-    }, {scope: 'public_profile, user_friends'});
+    }, {scope: 'public_profile, user_friends, user_photos'});
   };
 }
 

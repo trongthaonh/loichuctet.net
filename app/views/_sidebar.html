@@ -27,6 +27,19 @@
   </div>
   <div class="tab font-tab"
        ng-class="{ 'active' : sidebar.data.activeTab === 'font' }">
-    Font-size
+    <div class="list-item">
+      <span class="icon-font"></span>
+      <select ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontFamily">
+        <option ng-repeat="f in sidebar.data.fontsList" value="{{ f.family }}">{{ f.family }}</option>
+      </select>
+    </div>
+    <div class="list-item">
+      <span class="icon-text-height"></span>
+      <input type="text" ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontSize">
+    </div>
+    <div class="list-item">
+      <span class="icon-text-height"></span>
+      <input type="text" ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontSize">
+    </div>
   </div>
 </div>
