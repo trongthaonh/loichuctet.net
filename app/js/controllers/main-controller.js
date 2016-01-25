@@ -6,7 +6,7 @@ function MainController(SidebarService, _, Html2CanvasService, Facebook) {
   const main = this;
 
   main.sidebarData = SidebarService.data;
-  main.cardMessage = "YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO YOLO ";
+  main.cardMessage = "Chúc bà con ăn tết zui =))";
 
 
   main.fileChanged = function(event) {

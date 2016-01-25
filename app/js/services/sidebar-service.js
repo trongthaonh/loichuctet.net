@@ -43,26 +43,11 @@ function SidebarService($http, _) {
   service.data.selectingLayout = service.data.layouts[0];
 
   // Load google fonts
-  $http({
-    method: 'GET',
-    url: 'https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCU-tywp4zsEcoWq2oi69yENRBZ4NE-fyU'
-  }).then(function successCallback(response) {
-    service.data.fontsList = response.data.items;
-
-    let fontFamilies = [];
-    _.each(response.data.items, function(i){
-      if(fontFamilies.length < 10){
-        fontFamilies.push(i.family)
-      }
-    });
-
-    WebFont.load({
-      google: {
-        families: fontFamilies
-      }
-    });
-  }, function errorCallback(response) {
-    console.log(response)
+  service.data.fontsList = ['Rancho', 'Open Sans Condensed', 'Lobster', 'Noto Serif', 'Alegreya Sans SC', 'Roboto Mono', 'Open Sans', 'Noticia Text', 'Cousine', 'Roboto Slab'];
+  WebFont.load({
+    google: {
+      families: service.data.fontsList
+    }
   });
 
   return service;

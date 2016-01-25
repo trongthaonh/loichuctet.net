@@ -30,18 +30,21 @@
     <div class="list-item">
       <span class="icon-font control-label"></span>
       <select ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontFamily" class="control-input">
-        <option ng-repeat="f in sidebar.data.fontsList" value="{{ f.family }}">{{ f.family }}</option>
+        <option ng-repeat="f in sidebar.data.fontsList" value="{{ f }}">{{ f }}</option>
       </select>
     </div>
     <div class="list-item">
       <span class="icon-font-size control-label"></span>
-      <input type="number" ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontSize" class="control-input">
+      <input type="text" ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontSize" class="control-input">
     </div>
     <div class="list-item">
       <span class="icon-eyedropper control-label"></span>
-      <div ng-style="{ backgroundColor: sidebar.data.selectingLayout.messagePlaceholder.color }" class="control-input">
+      <div ng-style="{ backgroundColor: sidebar.data.selectingLayout.messagePlaceholder.color, borderColor: sidebar.data.selectingLayout.messagePlaceholder.color }" class="control-input">
         {{ sidebar.data.selectingLayout.messagePlaceholder.color }}
       </div>
+    </div>
+
+    <div class="list-item color-picker-wrapper">
       <color-picker ng-model="sidebar.data.selectingLayout.messagePlaceholder.color"></color-picker>
     </div>
   </div>
