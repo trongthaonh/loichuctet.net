@@ -8,7 +8,6 @@ function MainController(SidebarService, _, Html2CanvasService, Facebook) {
   main.sidebarData = SidebarService.data;
   main.cardMessage = "Năm mới Tết đến Rước hên vào nhà Quà cáp bao la Mọi nhà no đủ";
 
-
   main.fileChanged = function(event) {
     main.file = event.target.files[0];
   };

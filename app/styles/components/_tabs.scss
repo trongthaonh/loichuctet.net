@@ -40,16 +40,14 @@
   width: $vertical-tabs-content-width;
   margin-left: $vertical-tabs-width;
   position: absolute;
-  top: $header-height + 100;
+  top: $header-height;
   bottom: 0;
   padding: 0 23px;
   overflow: auto;
 
-  //.layout-tab{
-  //  overflow: auto;
-  //  margin-top: 100px;
-  //  height: 100%;
-  //}
+  &.active-layout-tab{
+    top: $header-height + 100;
+  }
 
   .tab{
     display: none;

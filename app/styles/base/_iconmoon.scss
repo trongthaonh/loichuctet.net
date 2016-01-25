@@ -24,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-eyedropper:before {
+  content: "\e90a";
+}
 .icon-spinner5:before {
   content: "\e900";
 }
@@ -42,6 +45,9 @@
 .icon-text-height:before {
   content: "\e905";
 }
+.icon-font-size:before {
+  content: "\e90b";
+}
 .icon-bold:before {
   content: "\e906";
 }
@@ -54,3 +60,4 @@
 .icon-insert-template:before {
   content: "\e909";
 }
+

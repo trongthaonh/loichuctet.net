@@ -10,3 +10,20 @@ input[type="text"]{
     outline: none;
   }
 }
+
+.control-label,
+.control-input{
+  display: table-cell;
+  padding: 0 10px;
+  vertical-align: middle;
+}
+
+.control-label{
+  width: 15%;
+  font-size: 27px
+}
+
+.control-input{
+  @extend input[type="text"];
+  width: 100%;
+}

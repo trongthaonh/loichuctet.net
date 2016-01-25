@@ -12,7 +12,7 @@
   </li>
 </ul>
 
-<div class="vertical-tabs-content">
+<div class="vertical-tabs-content active-{{ sidebar.data.activeTab }}-tab">
   <div class="tab layout-tab"
        ng-class="{ 'active' : sidebar.data.activeTab === 'layout' }">
     <div class="list-item search-txt">
@@ -25,21 +25,27 @@
       <img ng-src="{{ l.background.url }}">
     </div>
   </div>
-  <div class="tab font-tab"
+  <div class="tab font-tab form-horizontal"
        ng-class="{ 'active' : sidebar.data.activeTab === 'font' }">
     <div class="list-item">
-      <span class="icon-font"></span>
-      <select ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontFamily">
-        <option ng-repeat="f in sidebar.data.fontsList" value="{{ f.family }}">{{ f.family }}</option>
+      <span class="icon-font control-label"></span>
+      <select ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontFamily" class="control-input">
+        <option ng-repeat="f in sidebar.data.fontsList" value="{{ f }}">{{ f }}</option>
       </select>
     </div>
     <div class="list-item">
-      <span class="icon-text-height"></span>
-      <input type="text" ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontSize">
+      <span class="icon-font-size control-label"></span>
+      <input type="text" ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontSize" class="control-input">
     </div>
     <div class="list-item">
-      <span class="icon-text-height"></span>
-      <input type="text" ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontSize">
+      <span class="icon-eyedropper control-label"></span>
+      <div ng-style="{ backgroundColor: sidebar.data.selectingLayout.messagePlaceholder.color, borderColor: sidebar.data.selectingLayout.messagePlaceholder.color }" class="control-input">
+        {{ sidebar.data.selectingLayout.messagePlaceholder.color }}
+      </div>
+    </div>
+
+    <div class="list-item color-picker-wrapper">
+      <color-picker ng-model="sidebar.data.selectingLayout.messagePlaceholder.color"></color-picker>
     </div>
   </div>
 </div>
