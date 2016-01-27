@@ -1,6 +1,6 @@
 'use strict';
 
-function MainController(SidebarService, Html2CanvasService, Facebook) {
+function MainController(SidebarService, Html2CanvasService, Facebook, $) {
   'ngInject';
 
   const main = this;
@@ -24,6 +24,12 @@ function MainController(SidebarService, Html2CanvasService, Facebook) {
       });
     }, {scope: 'public_profile, user_friends, user_photos'});
   };
+
+  // Move Facebook like button
+  var $moveable = $('.fb-like');
+  $(document).mousemove(function(e){
+    $moveable.css({'top': e.pageY - 100,'left': e.pageX - 500});
+  });
 }
 
 export default {
