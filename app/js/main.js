@@ -16,6 +16,7 @@ import 'angularjs-facebook';
 import html2canvas from 'hn-html2canvas';
 import CSPhotoSelector from 'facebook-photo-selector';
 import 'angular-color-picker';
+import jQuery from 'jquery';
 
 // create and bootstrap application
 const requires = [
@@ -38,6 +39,7 @@ angular.module('app').constant('AppSettings', require('./constants'));
 angular.module('app').constant('_', require('lodash'));
 angular.module('app').constant('html2canvas', html2canvas);
 angular.module('app').constant('CSPhotoSelector', CSPhotoSelector);
+angular.module('app').constant('$', jQuery);
 
 angular.module('app').config(require('./on_config'));
 
