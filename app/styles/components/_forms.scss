@@ -27,3 +27,9 @@ input[type="text"]{
   @extend input[type="text"];
   width: 100%;
 }
+
+textarea{
+  outline: none;
+  background: transparent;
+  border: none;
+}

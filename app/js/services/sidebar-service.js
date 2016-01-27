@@ -32,6 +32,8 @@ function SidebarService($http, _) {
           top: '622px',
           left: '60px',
           width: '420px',
+          height: '205px',
+          fontFamily: 'inherit',
           fontSize: '24px',
           color: '#f7d433'
         }
@@ -58,7 +60,10 @@ function SidebarService($http, _) {
           top: '86px',
           left: '50px',
           width: '410px',
-          fontSize: '24px'
+          height: '205px',
+          fontFamily: 'inherit',
+          fontSize: '24px',
+          color: '#f7d433'
         }
       },
       {
@@ -83,7 +88,10 @@ function SidebarService($http, _) {
           top: '86px',
           right: '50px',
           width: '410px',
-          fontSize: '24px'
+          height: '205px',
+          fontFamily: 'inherit',
+          fontSize: '24px',
+          color: '#f7d433'
         }
       },
       {
@@ -108,7 +116,10 @@ function SidebarService($http, _) {
           top: '260px',
           left: '274px',
           width: '479px',
-          fontSize: '24px'
+          height: '205px',
+          fontFamily: 'inherit',
+          fontSize: '24px',
+          color: '#f7d433'
         }
       },
       {
@@ -133,6 +144,8 @@ function SidebarService($http, _) {
           top: '285px',
           left: '69px',
           width: '479px',
+          height: '205px',
+          fontFamily: 'inherit',
           fontSize: '24px',
           color: '#f7d433'
         }
@@ -190,6 +203,7 @@ function SidebarService($http, _) {
           left: '240px',
           width: '302px',
           height: '176px',
+          fontFamily: 'inherit',
           fontSize: '18px',
           color: '#c31911'
         }
@@ -217,6 +231,7 @@ function SidebarService($http, _) {
           left: '69px',
           width: '668px',
           height: '324px',
+          fontFamily: 'inherit',
           fontSize: '18px',
           color: '#fff'
         }
@@ -245,6 +260,7 @@ function SidebarService($http, _) {
           left: '339px',
           width: '392px',
           height: '195px',
+          fontFamily: 'inherit',
           fontSize: '18px',
           'text-align': 'left',
           'text-shadow': '4px 4px 13px rgba(0, 0, 0, 1)'

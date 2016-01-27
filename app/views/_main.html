@@ -27,6 +27,8 @@
 
       <!-- Canvas holding selected image -->
       <canvas class="image-placeholder canvas"
+              width="{{ main.sidebarData.selectingLayout.imagePlaceholder.width.replace('px', '') }}"
+              height="{{ main.sidebarData.selectingLayout.imagePlaceholder.height.replace('px', '') }}"
               tw-cropper="cropper"
               source="main.file"
               ng-style="main.sidebarData.selectingLayout.imagePlaceholder"></canvas>
@@ -38,10 +40,10 @@
                accept="image/*">
         <label>Choose image</label>
       </div>
-      <div class="card-message"
-           ng-style="main.sidebarData.selectingLayout.messagePlaceholder">
-        {{ main.cardMessage }}
-      </div>
+      <textarea class="card-message"
+                ng-style="main.sidebarData.selectingLayout.messagePlaceholder"
+                ng-model="main.cardMessage">
+      </textarea>
     </div>
   </div>
 

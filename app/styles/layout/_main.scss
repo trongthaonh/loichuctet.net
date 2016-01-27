@@ -67,6 +67,8 @@
 
       .card-message{
         position: absolute;
+        overflow: hidden;
+        @include resize('none');
       }
     }
 
