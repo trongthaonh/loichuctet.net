@@ -24,12 +24,6 @@ function SidebarService($http, _) {
           width: '144px',
           height: '144px'
         },
-        btnSelectImage: {
-          top: '444px',
-          left: '182px',
-          width: '144px',
-          height: '30px'
-        },
         messagePlaceholder: {
           top: '622px',
           left: '60px',
@@ -51,12 +45,6 @@ function SidebarService($http, _) {
           right: '0px',
           width: '380px',
           height: '406px'
-        },
-        btnSelectImage: {
-          top: '400px',
-          right: '160px',
-          width: '144px',
-          height: '30px'
         },
         messagePlaceholder: {
           top: '86px',
@@ -80,12 +68,6 @@ function SidebarService($http, _) {
           width: '380px',
           height: '406px'
         },
-        btnSelectImage: {
-          top: '400px',
-          left: '160px',
-          width: '144px',
-          height: '30px'
-        },
         messagePlaceholder: {
           top: '86px',
           right: '50px',
@@ -108,12 +90,6 @@ function SidebarService($http, _) {
           width: '160px',
           height: '160px'
         },
-        btnSelectImage: {
-          top: '197px',
-          left: '434px',
-          width: '144px',
-          height: '30px'
-        },
         messagePlaceholder: {
           top: '260px',
           left: '274px',
@@ -135,12 +111,6 @@ function SidebarService($http, _) {
           left: '225px',
           width: '160px',
           height: '160px'
-        },
-        btnSelectImage: {
-          top: '237px',
-          left: '233px',
-          width: '144px',
-          height: '30px'
         },
         messagePlaceholder: {
           top: '285px',
@@ -165,12 +135,6 @@ function SidebarService($http, _) {
           height: '129px',
           'box-shadow': '4px 4px 13px rgba(150, 150, 150, 1)'
         },
-        btnSelectImage: {
-          top: '205px',
-          left: '560px',
-          width: '130px',
-          height: '30px'
-        },
         messagePlaceholder: {
           top: '205px',
           left: '150px',
@@ -194,12 +158,6 @@ function SidebarService($http, _) {
           height: '170px',
           'box-shadow': '4px 4px 13px rgba(0, 0, 0, 1)'
         },
-        btnSelectImage: {
-          top: '180px',
-          left: '329px',
-          width: '130px',
-          height: '30px'
-        },
         messagePlaceholder: {
           top: '406px',
           left: '240px',
@@ -221,12 +179,6 @@ function SidebarService($http, _) {
           left: '327px',
           width: '146px',
           height: '146px'
-        },
-        btnSelectImage: {
-          top: '-4px',
-          left: '333px',
-          width: '130px',
-          height: '30px'
         },
         messagePlaceholder: {
           top: '189px',
@@ -251,12 +203,6 @@ function SidebarService($http, _) {
           height: '189px',
           'box-shadow': '4px 4px 13px rgba(0, 0, 0, 1)'
         },
-        btnSelectImage: {
-          top: '689px',
-          left: '137px',
-          width: '130px',
-          height: '30px'
-        },
         messagePlaceholder: {
           top: '499px',
           left: '339px',
@@ -279,12 +225,6 @@ function SidebarService($http, _) {
           left: '573px',
           width: '149px',
           height: '149px'
-        },
-        btnSelectImage: {
-          top: '507px',
-          left: '573px',
-          width: '130px',
-          height: '30px'
         },
         messagePlaceholder: {
           top: '534px',

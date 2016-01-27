@@ -25,6 +25,8 @@ input[type="text"]{
 
 .control-input{
   @extend input[type="text"];
+  @include border-radius(0);
+
   width: 100%;
 }
 

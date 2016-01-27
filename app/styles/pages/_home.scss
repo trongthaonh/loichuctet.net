@@ -8,16 +8,3 @@ body, html{
   position: relative;
   height: 100%;
 }
-
-.font-tab{
-  .list-item{
-    padding-top: 25px;
-    display: table;
-    width: 100%;
-
-    &.color-picker-wrapper{
-      padding: 0;
-      margin-top: -15px;
-    }
-  }
-}

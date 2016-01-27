@@ -42,27 +42,10 @@
         margin: 0 auto;
       }
 
-      #btn-select-file{
-        position: absolute;
-        background: #666;
-        overflow: hidden;
-
-        input{
-          opacity: 0;
-          position: absolute;
-          left: 0;
-          top: 0;
-          bottom: 0;
-          right: 0;
-        }
-      }
-
       .image-placeholder{
         position: absolute;
-        opacity: 1;
-        border: dashed 3px #F0E1C4;
-        z-index: 1000;
-        cursor: all-scroll;
+        border: none;
+        outline: none;
       }
 
       .card-message{

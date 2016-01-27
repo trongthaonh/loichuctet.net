@@ -24,8 +24,32 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-settings2:before {
+  content: "\e914";
+}
+.icon-params:before {
+  content: "\e912";
+}
+.icon-settings:before {
+  content: "\e913";
+}
+.icon-check:before {
+  content: "\e915";
+}
+.icon-palette:before {
+  content: "\e90c";
+}
+.icon-camera_alt:before {
+  content: "\e90d";
+}
+.icon-camera2:before {
+  content: "\e90e";
+}
 .icon-eyedropper:before {
   content: "\e90a";
+}
+.icon-camera:before {
+  content: "\e90f";
 }
 .icon-spinner5:before {
   content: "\e900";
@@ -38,6 +62,12 @@
 }
 .icon-spinner10:before {
   content: "\e903";
+}
+.icon-equalizer:before {
+  content: "\e910";
+}
+.icon-cogs:before {
+  content: "\e911";
 }
 .icon-font:before {
   content: "\e904";
