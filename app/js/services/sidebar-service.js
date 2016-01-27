@@ -270,6 +270,33 @@ function SidebarService($http, _) {
         background: {
           width: '800px',
           height: '800px',
+          url: 'images/layout-thiep-16.jpg'
+        },
+        imagePlaceholder: {
+          top: '265px',
+          left: '344px',
+          width: '145px',
+          height: '145px'
+        },
+        btnSelectImage: {
+          top: '507px',
+          left: '573px',
+          width: '130px',
+          height: '30px'
+        },
+        messagePlaceholder: {
+          top: '427px',
+          left: '231px',
+          width: '369px',
+          height: '130px',
+          fontSize: '20px',
+          fontFamily: 'inherit'
+        }
+      },
+      {
+        background: {
+          width: '800px',
+          height: '800px',
           url: 'images/layout-thiep-15.jpg'
         },
         imagePlaceholder: {
@@ -292,6 +319,62 @@ function SidebarService($http, _) {
           fontSize: '20px',
           fontFamily: 'inherit',
           color: "#FACC3C"
+        }
+      },
+      {
+        background: {
+          width: '800px',
+          height: '800px',
+          url: 'images/layout-thiep-17.jpg'
+        },
+        imagePlaceholder: {
+          top: '27px',
+          left: '290px',
+          width: '229px',
+          height: '229px'
+        },
+        btnSelectImage: {
+          top: '507px',
+          left: '573px',
+          width: '130px',
+          height: '30px'
+        },
+        messagePlaceholder: {
+          top: '286px',
+          left: '71px',
+          width: '662px',
+          height: '123px',
+          fontSize: '20px',
+          fontFamily: 'inherit',
+          color: "#FFF"
+        }
+      },
+      {
+        background: {
+          width: '800px',
+          height: '800px',
+          url: 'images/layout-thiep-18.jpg'
+        },
+        imagePlaceholder: {
+          top: '146px',
+          left: '50px',
+          width: '276px',
+          height: '348px'
+        },
+        btnSelectImage: {
+          top: '507px',
+          left: '573px',
+          width: '130px',
+          height: '30px'
+        },
+        messagePlaceholder: {
+          top: '208px',
+          left: '352px',
+          width: '381px',
+          height: '216px',
+          fontSize: '20px',
+          fontFamily: 'inherit',
+          color: "#FFF"
         }
       }
     ]
