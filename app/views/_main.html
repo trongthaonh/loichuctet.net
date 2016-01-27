@@ -2,45 +2,16 @@
 <div class="paper-wrap">
   <img class="happy-2016" src="images/main-happy-2016.png">
   <div class="editing-area">
-    <!--<div>-->
-      <!--<h3>First, choose a file</h3>-->
-      <!--<input type="file" simple-change="main.fileChanged($event)" accept="image/*">-->
-    <!--</div>-->
-
-    <!--<div>-->
-      <!--<h3>Then, crop it</h3>-->
-      <!--<canvas class="cropper" width="300" height="300" tw-cropper="cropper" source="main.file"></canvas>-->
-    <!--</div>-->
-
-    <!--<div ng-show="main.file">-->
-      <!--<h3>When you're done, use it</h3>-->
-      <!--<button ng-click="crop = cropper.toDataURL()">Save</button>-->
-    <!--</div>-->
-
-    <!--<div ng-show="crop">-->
-      <!--<h3>Result:</h3>-->
-      <!--<img ng-src="{{crop}}">-->
-    <!--</div>-->
-
     <div class="card-layout" ng-style="main.sidebarData.selectingLayout.background">
       <img ng-src="{{ main.sidebarData.selectingLayout.background.url }}">
 
-      <!-- Canvas holding selected image -->
-      <canvas class="image-placeholder canvas"
-              width="{{ main.sidebarData.selectingLayout.imagePlaceholder.width.replace('px', '') }}"
-              height="{{ main.sidebarData.selectingLayout.imagePlaceholder.height.replace('px', '') }}"
-              tw-cropper="cropper"
-              source="main.file"
-              ng-style="main.sidebarData.selectingLayout.imagePlaceholder"></canvas>
+      <!-- Cropped image -->
+      <img class="image-placeholder"
+           ng-src="{{ main.sidebarData.dataURI }}"
+           ng-style="main.sidebarData.selectingLayout.imagePlaceholder">
 
-      <div id="btn-select-file"
-           ng-style="main.sidebarData.selectingLayout.btnSelectImage">
-        <input type="file"
-               simple-change="main.fileChanged($event)"
-               accept="image/*">
-        <label>Choose image</label>
-      </div>
       <textarea class="card-message"
+                placeholder="Hãy viết lời chúc dành cho ai đó :)"
                 ng-style="main.sidebarData.selectingLayout.messagePlaceholder"
                 ng-model="main.cardMessage">
       </textarea>

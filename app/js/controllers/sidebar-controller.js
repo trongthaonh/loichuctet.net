@@ -15,7 +15,15 @@ function SidebarController(SidebarService) {
     sidebar.data.selectingLayout = _layout;
   };
 
-  sidebar.data.selectingLayout.fontFamily
+  sidebar.fileChanged = function(event) {
+    sidebar.data.file = event.target.files[0];
+  };
+
+  sidebar.cropImage = function(_dataURI){
+    sidebar.data.dataURI = _dataURI;
+    // Do your uploading here
+    console.log(sidebar.data.dataURI);
+  };
 }
 
 export default {

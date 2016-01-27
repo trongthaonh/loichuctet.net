@@ -7,6 +7,8 @@ function SidebarService($http, _) {
 
   service.data = {
     activeTab : 'font',
+    file: null,
+    dataURI: null,
     selectingLayout: {},
     fontsList: [],
     layouts: [

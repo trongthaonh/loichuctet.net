@@ -1,20 +1,12 @@
 'use strict';
 
-function MainController(SidebarService, _, Html2CanvasService, Facebook) {
+function MainController(SidebarService, Html2CanvasService, Facebook) {
   'ngInject';
 
   const main = this;
 
   main.sidebarData = SidebarService.data;
   main.cardMessage = "Năm mới Tết đến Rước hên vào nhà Quà cáp bao la Mọi nhà no đủ";
-
-  main.fileChanged = function(event) {
-    main.file = event.target.files[0];
-  };
-
-  main.handle = function handle(dataURL) {
-    // Do your uploading here
-  };
 
   main.captureCard = function(){
     Facebook.login(function(response) {

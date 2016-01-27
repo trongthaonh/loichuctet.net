@@ -32,4 +32,8 @@ textarea{
   outline: none;
   background: transparent;
   border: none;
+
+  &:focus{
+    border: dotted 1px $base-color;
+  }
 }

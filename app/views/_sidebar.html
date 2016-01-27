@@ -28,6 +28,22 @@
   <div class="tab font-tab form-horizontal"
        ng-class="{ 'active' : sidebar.data.activeTab === 'font' }">
     <div class="list-item">
+      <canvas class="image-placeholder canvas"
+              width="{{ sidebar.data.selectingLayout.imagePlaceholder.width.replace('px', '') }}"
+              height="{{ sidebar.data.selectingLayout.imagePlaceholder.height.replace('px', '') }}"
+              tw-cropper="cropper"
+              source="sidebar.data.file"></canvas>
+      <button ng-click="sidebar.cropImage(cropper.toDataURL())">Crop this</button>
+
+      <div id="btn-select-file"
+           ng-style="sidebar.data.selectingLayout.btnSelectImage">
+        <input type="file"
+               simple-change="sidebar.fileChanged($event)"
+               accept="image/*">
+        <label>Choose image</label>
+      </div>
+    </div>
+    <div class="list-item">
       <span class="icon-font control-label"></span>
       <select ng-model="sidebar.data.selectingLayout.messagePlaceholder.fontFamily" class="control-input">
         <option ng-repeat="f in sidebar.data.fontsList" value="{{ f }}">{{ f }}</option>
