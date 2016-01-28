@@ -8,7 +8,8 @@
       <!-- Cropped image -->
       <img class="image-placeholder"
            ng-src="{{ main.sidebarData.dataURI }}"
-           ng-style="main.sidebarData.selectingLayout.imagePlaceholder">
+           ng-style="main.sidebarData.selectingLayout.imagePlaceholder"
+           ng-show="main.sidebarData.userSelectedImage">
 
       <textarea class="card-message"
                 placeholder="Hãy viết lời chúc dành cho ai đó :)"

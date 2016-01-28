@@ -35,11 +35,11 @@
               source="sidebar.data.file"></canvas>
 
       <div class="buttons">
-        <div class="button" ng-click="sidebar.chooseImage($event)">
+        <div class="button">
           <input type="file" id="btn-choose-img"
                  simple-change="sidebar.fileChanged($event)"
                  accept="image/*">
-          <label><span class="icon-camera"></span>Đổi ảnh</label>
+          <label for="btn-choose-img"><span class="icon-camera"></span>Đổi ảnh</label>
         </div>
 
         <button class="button" ng-click="sidebar.cropImage(cropper.toDataURL())">

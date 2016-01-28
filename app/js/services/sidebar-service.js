@@ -9,6 +9,7 @@ function SidebarService($http, _) {
     activeTab : 'font',
     file: null,
     dataURI: null,
+    userSelectedImage: false,
     selectingLayout: {},
     fontsList: [],
     layouts: [

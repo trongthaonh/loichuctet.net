@@ -19,12 +19,9 @@ function SidebarController(SidebarService) {
     sidebar.data.file = event.target.files[0];
   };
 
-  sidebar.chooseImage = function(event){
-    event.stopPropagation();
-  };
-
   sidebar.cropImage = function(_dataURI){
     sidebar.data.dataURI = _dataURI;
+    sidebar.data.userSelectedImage = true;
   };
 }
 
