@@ -29,6 +29,10 @@ export default {
     src: ['app/fonts/**/*'],
     dest: 'build/fonts'
   },
+  vendors: {
+    src: 'app/js/vendors/**/*',
+    dest: 'build/js/vendors'
+  },
 
   assetExtensions: [
     'js',
