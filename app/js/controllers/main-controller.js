@@ -31,6 +31,33 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $) {
     });
   };
 
+
+  main.dom2image = function() {
+    var canvas = document.getElementById('my-canvas');
+    var ctx = canvas.getContext('2d');
+
+    var background=document.getElementById("background-image");
+    var avatar=document.getElementById("avatar");
+    var message=document.getElementById("message").outerHTML;
+
+    setTimeout(function(){
+      canvas.toBlob(function(blob) {
+        saveAs(blob, "pretty image.png");
+      });
+
+      //saveSvgAsPng(canvas, 'blabla')
+
+    }, 2000)
+
+
+    ctx.drawImage(background,0,0);
+    ctx.drawImage(avatar,100,100);
+    ctx.drawImage(message,500,0);
+
+
+  };
+
+
   // Move Facebook like button
   //var $moveable = $('.fb-like');
   //$(document).mousemove(function(e){

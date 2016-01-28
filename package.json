@@ -81,9 +81,10 @@
     "angular-cropper": "^0.8.3",
     "angular-resource": "^1.4.8",
     "angularjs-facebook": "^0.2.3",
+    "express": "^4.13.3",
     "facebook-photo-selector": "0.0.9",
     "hn-html2canvas": "^4.0.0",
     "jquery": "*",
-    "express": "^4.13.3"
+    "save-svg-as-png": "^1.0.2"
   }
 }

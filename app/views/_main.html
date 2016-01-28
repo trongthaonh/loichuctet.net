@@ -3,24 +3,31 @@
   <img class="happy-2016" src="images/main-happy-2016.png">
   <div class="editing-area">
     <div class="card-layout" ng-style="main.sidebarData.selectingLayout.background">
-      <img ng-src="{{ main.sidebarData.selectingLayout.background.url }}">
+      <img id="background-image" ng-src="{{ main.sidebarData.selectingLayout.background.url }}">
 
       <!-- Cropped image -->
-      <img class="image-placeholder"
+      <img id="avatar" class="image-placeholder"
            ng-src="{{ main.sidebarData.dataURI }}"
            ng-style="main.sidebarData.selectingLayout.imagePlaceholder"
            ng-show="main.sidebarData.userSelectedImage">
 
-      <textarea class="card-message"
-                placeholder="Hãy viết lời chúc dành cho ai đó :)"
-                ng-style="main.sidebarData.selectingLayout.messagePlaceholder"
-                ng-model="main.cardMessage">
-      </textarea>
+      <svg  xmlns="http://www.w3.org/2000/svg" width="{{ main.sidebarData.selectingLayout.messagePlaceholder.width }}" height="{{ main.sidebarData.selectingLayout.messagePlaceholder.height }}">
+        <foreignObject width="100%" height="100%">
+          <textarea id="message"
+                    class="card-message"
+                    placeholder="Hãy viết lời chúc dành cho ai đó :)"
+                    ng-style="main.sidebarData.selectingLayout.messagePlaceholder"
+                    ng-model="main.cardMessage">
+          </textarea>
+        </foreignObject>
+      </svg>
     </div>
+
+    <canvas id="my-canvas" width="800" height="800"></canvas>
   </div>
 
   <div class="buttons">
-    <button class="button styled-button button-with-image" ng-click="main.captureCard()">
+    <button class="button styled-button button-with-image" ng-click="main.dom2image()">
       <img src="images/main-btn-01-img.png"> Download
     </button>
     <button class="button styled-button button-with-image">
