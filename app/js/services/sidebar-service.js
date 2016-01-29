@@ -39,7 +39,8 @@ function SidebarService($http, _) {
         background: {
           width: '800px',
           height: '400px',
-          url: 'images/layout-thiep-07.png'
+          url: 'images/layout-thiep-07.png',
+          zIndex: 1
         },
         imagePlaceholder: {
           top: '-3px',
@@ -54,14 +55,16 @@ function SidebarService($http, _) {
           height: '205px',
           fontFamily: 'inherit',
           fontSize: '24px',
-          color: '#f7d433'
+          color: '#f7d433',
+          zIndex: 1
         }
       },
       {
         background: {
           width: '800px',
           height: '400px',
-          url: 'images/layout-thiep-08.png'
+          url: 'images/layout-thiep-08.png',
+          zIndex: 1
         },
         imagePlaceholder: {
           top: '-3px',
@@ -76,7 +79,8 @@ function SidebarService($http, _) {
           height: '205px',
           fontFamily: 'inherit',
           fontSize: '24px',
-          color: '#f7d433'
+          color: '#f7d433',
+          zIndex: 1
         }
       },
       {
