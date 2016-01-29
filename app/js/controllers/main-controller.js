@@ -32,29 +32,47 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $) {
   };
 
 
-  main.dom2image = function() {
-    var canvas = document.getElementById('my-canvas');
-    var ctx = canvas.getContext('2d');
+  main.downloadCard = function() {
+    // Create card canvas
+    var cardCanvas = document.createElement('canvas');
+    cardCanvas.id = "card-canvas";
+    cardCanvas.width = 800;
+    cardCanvas.height = 800;
 
-    var background=document.getElementById("background-image");
-    var avatar=document.getElementById("avatar");
-    var message=document.getElementById("message").outerHTML;
+    var cardCtx = cardCanvas.getContext('2d');
 
-    setTimeout(function(){
-      canvas.toBlob(function(blob) {
-        saveAs(blob, "pretty image.png");
-      });
+    var message = document.getElementById("message");
+    html2canvas(message, {
+      onrendered: function(canvas) {
+        var imageElement = document.createElement('img');
+        imageElement.src = canvas.toDataURL("image/png");
 
-      //saveSvgAsPng(canvas, 'blabla')
+        var background = document.getElementById("background-image");
+        var avatar = document.getElementById("avatar");
 
-    }, 2000)
+        // Get position
+        var backgroundRect = background.getBoundingClientRect();
+        var avatarRect = avatar.getBoundingClientRect();
+        var messageRect = message.getBoundingClientRect();
 
+        // Calculate position
+        var sX1 = avatarRect.left - backgroundRect.left;
+        var sY1 = avatarRect.top - backgroundRect.top;
 
-    ctx.drawImage(background,0,0);
-    ctx.drawImage(avatar,100,100);
-    ctx.drawImage(message,500,0);
+        var sX2 = messageRect.left - backgroundRect.left;
+        var sY2 = messageRect.top - backgroundRect.top;
 
+        cardCtx.drawImage(background,0,0);
+        cardCtx.drawImage(avatar,sX1,sY1);
+        cardCtx.drawImage(imageElement,sX2,sY2);
 
+        setTimeout(function(){
+          cardCanvas.toBlob(function(blob) {
+            saveAs(blob, "loichuctet.net.png");
+          });
+        }, 0);
+      }
+    });
   };
 
 

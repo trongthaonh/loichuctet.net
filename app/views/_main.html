@@ -11,28 +11,22 @@
            ng-style="main.sidebarData.selectingLayout.imagePlaceholder"
            ng-show="main.sidebarData.userSelectedImage">
 
-      <svg  xmlns="http://www.w3.org/2000/svg" width="{{ main.sidebarData.selectingLayout.messagePlaceholder.width }}" height="{{ main.sidebarData.selectingLayout.messagePlaceholder.height }}">
-        <foreignObject width="100%" height="100%">
-          <textarea id="message"
-                    class="card-message"
-                    placeholder="Hãy viết lời chúc dành cho ai đó :)"
-                    ng-style="main.sidebarData.selectingLayout.messagePlaceholder"
-                    ng-model="main.cardMessage">
-          </textarea>
-        </foreignObject>
-      </svg>
+      <textarea id="message"
+                class="card-message"
+                placeholder="Hãy viết lời chúc dành cho ai đó :)"
+                ng-style="main.sidebarData.selectingLayout.messagePlaceholder"
+                ng-model="main.cardMessage">
+      </textarea>
     </div>
-
-    <canvas id="my-canvas" width="800" height="800"></canvas>
   </div>
 
   <div class="buttons">
-    <button class="button styled-button button-with-image" ng-click="main.dom2image()">
+    <button class="button styled-button button-with-image" ng-click="main.downloadCard()">
       <img src="images/main-btn-01-img.png"> Download
     </button>
     <button class="button styled-button button-with-image">
       <img src="images/main-btn-02-img.png"> Share
     </button>
-    <div class="fb-like" data-href="https://www.facebook.com/loichuctetynghia/" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+    <!--<div class="fb-like" data-href="https://www.facebook.com/loichuctetynghia/" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>-->
   </div>
 </div>
