@@ -93,9 +93,10 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
         })
         .done(function(response) {
           var imageUrl = AppSettings.apiUrl + "/containers/images/download/" + response.result.files.file[0].name;
-          Facebook.ui({
-            method: 'share',
-            href: imageUrl
+          FB.ui({
+            method: 'feed',
+            link: imageUrl,
+            caption: "Gửi lời chúc tết Bính Thân đến những người thân yêu nhất của bạn"
           }, function(response){
             console.log("OK");
           });
