@@ -54,8 +54,13 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
         var sX2 = messageRect.left - backgroundRect.left;
         var sY2 = messageRect.top - backgroundRect.top;
 
-        cardCtx.drawImage(background,0,0);
-        cardCtx.drawImage(avatar,sX1,sY1, parseInt(avatar.style.width, 10), parseInt(avatar.style.height, 10));
+        if(main.sidebarData.selectingLayout.background.zIndex){
+          cardCtx.drawImage(avatar,sX1,sY1, parseInt(avatar.style.width, 10), parseInt(avatar.style.height, 10));
+          cardCtx.drawImage(background,0,0);
+        } else{
+          cardCtx.drawImage(background,0,0);
+          cardCtx.drawImage(avatar,sX1,sY1, parseInt(avatar.style.width, 10), parseInt(avatar.style.height, 10));
+        }
         cardCtx.drawImage(imageElement,sX2,sY2);
 
         if(typeof _callback == 'function'){
