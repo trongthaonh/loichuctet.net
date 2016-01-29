@@ -95,8 +95,11 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
           var imageUrl = AppSettings.apiUrl + "/containers/images/download/" + response.result.files.file[0].name;
           FB.ui({
             method: 'feed',
-            link: imageUrl,
-            caption: "Gửi lời chúc tết Bính Thân đến những người thân yêu nhất của bạn"
+            app_id: 1252568694759524,
+            link: "http://apps.loichuctet.net",
+            picture: imageUrl,
+            caption: "Gửi lời chúc tết Bính Thân đến những người thân yêu nhất của bạn",
+            redirect_uri: "http://apps.loichuctet.net"
           }, function(response){
             console.log("OK");
           });
