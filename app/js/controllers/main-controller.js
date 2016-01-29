@@ -1,21 +1,12 @@
 'use strict';
 
-function MainController(SidebarService, Html2CanvasService, Facebook, $) {
+function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSettings) {
   'ngInject';
 
   const main = this;
 
   main.sidebarData = SidebarService.data;
   main.cardMessage = "Năm mới Tết đến Rước hên vào nhà Quà cáp bao la Mọi nhà no đủ";
-
-  var downloadImage = function(){
-    var cardLayout = document.getElementsByClassName("card-layout");
-    html2canvas(cardLayout, {
-      onrendered: function(canvas) {
-        Canvas2Image.saveAsPNG(canvas);
-      }
-    });
-  };
 
   main.captureCard = function(){
     Facebook.getLoginStatus(function(response) {
@@ -31,8 +22,7 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $) {
     });
   };
 
-
-  main.downloadCard = function() {
+  var domToCanvas = function(_callback){
     // Create card canvas
     var cardCanvas = document.createElement('canvas');
     cardCanvas.id = "card-canvas";
@@ -66,12 +56,49 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $) {
         cardCtx.drawImage(avatar,sX1,sY1);
         cardCtx.drawImage(imageElement,sX2,sY2);
 
-        setTimeout(function(){
-          cardCanvas.toBlob(function(blob) {
-            saveAs(blob, "loichuctet.net.png");
-          });
-        }, 0);
+        if(typeof _callback == 'function'){
+          _callback(cardCanvas);
+        }
       }
+    });
+  };
+
+  main.downloadCard = function() {
+    domToCanvas(function(_canvas){
+      _canvas.toBlob(function(blob) {
+        saveAs(blob, "my_card.loichuctet.net.png");
+      });
+    });
+  };
+
+  main.shareCard = function(){
+    domToCanvas(function(_canvas){
+      _canvas.toBlob(function(_blob) {
+        _blob.lastModifiedDate = new Date();
+        _blob.name = "loichuctet.net.png";
+
+
+        // Upload image
+        var fd = new FormData();
+        fd.append('file', _blob);
+
+        $.ajax({
+          method: "POST",
+          url: AppSettings.apiUrl + "/containers/images/upload",
+          data: fd,
+          processData: false,
+          contentType: false
+        })
+        .done(function(response) {
+          var imageUrl = AppSettings.apiUrl + "/containers/images/download/" + response.result.files.file[0].name;
+          Facebook.ui({
+            method: 'share',
+            href: imageUrl
+          }, function(response){
+            console.log("OK");
+          });
+        });
+      });
     });
   };
 
