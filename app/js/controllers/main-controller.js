@@ -62,7 +62,7 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
   };
 
   var likeBefore = function(_callback){
-    if(localStorage.lct_liked == '0'){
+    if(localStorage.lct_liked === '0'){
       Facebook.parseXFBML();
       swal({
         title: "Nhấn nút Like để tiếp tục",
@@ -76,30 +76,32 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
           type: "success",
           html: true
         }, function(){
-          if(typeof _callback == 'function' && localStorage.lct_liked == '1'){
+          if(typeof _callback == 'function' && localStorage.lct_liked === '1'){
             _callback();
           }
         });
       });
-    } else{
-      if(typeof _callback == 'function' && localStorage.lct_liked == '1'){
+    } else {
+      if(typeof _callback == 'function'){
         _callback();
       }
     }
   };
 
   main.downloadCard = function() {
-    likeBefore(function(){
+    var download = function(){
       domToCanvas(function(_canvas){
         _canvas.toBlob(function(blob) {
           saveAs(blob, "my_card.loichuctet.net.png");
         });
       });
-    });
+    };
+
+    likeBefore(download);
   };
 
   main.shareCard = function(){
-    likeBefore(function(){
+    var share = function(){
       domToCanvas(function(_canvas){
         _canvas.toBlob(function(_blob) {
           _blob.lastModifiedDate = new Date();
@@ -132,7 +134,9 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
           });
         });
       });
-    });
+    };
+
+    likeBefore(share);
   };
 
   Facebook.subscribe('edge.create', function() {
@@ -142,12 +146,6 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
   Facebook.subscribe('edge.remove', function() {
     localStorage.setItem("lct_liked", '0');
   });
-
-  // Move Facebook like button
-  //var $moveable = $('.fb-like');
-  //$(document).mousemove(function(e){
-  //  $moveable.css({'top': e.pageY - 100,'left': e.pageX - 500});
-  //});
 }
 
 export default {
