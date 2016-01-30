@@ -17,6 +17,8 @@ import html2canvas from 'hn-html2canvas';
 import CSPhotoSelector from 'facebook-photo-selector';
 import 'angular-color-picker';
 import jQuery from 'jquery';
+import 'sweetalert';
+
 
 // create and bootstrap application
 const requires = [

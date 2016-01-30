@@ -12,6 +12,7 @@
 // Vendors
 // Import jQuery lib, Bootstrap ... etc
 @import "node_modules/angular-color-picker/angular-color-picker";
+@import "node_modules/sweetalert/dist/sweetalert";
 
 
 // Themes
@@ -28,6 +29,7 @@
 @import "components/button";
 @import "components/tabs";
 @import "components/forms";
+@import "components/alert";
 
 
 // Page specific styles
