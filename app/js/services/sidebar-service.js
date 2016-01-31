@@ -31,7 +31,7 @@ function SidebarService($http, _) {
           left: '50px',
           width: '410px',
           height: '205px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           fontSize: '24px',
           color: '#f7d433',
           zIndex: 1
@@ -55,7 +55,7 @@ function SidebarService($http, _) {
           right: '50px',
           width: '410px',
           height: '205px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           fontSize: '24px',
           color: '#f7d433',
           zIndex: 1
@@ -101,7 +101,7 @@ function SidebarService($http, _) {
           left: '60px',
           width: '420px',
           height: '205px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           fontSize: '24px',
           color: '#f7d433'
         }
@@ -123,7 +123,7 @@ function SidebarService($http, _) {
           left: '274px',
           width: '479px',
           height: '205px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           fontSize: '24px',
           color: '#f7d433'
         }
@@ -145,7 +145,7 @@ function SidebarService($http, _) {
           left: '69px',
           width: '479px',
           height: '205px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           fontSize: '24px',
           color: '#f7d433'
         }
@@ -168,7 +168,7 @@ function SidebarService($http, _) {
           left: '240px',
           width: '302px',
           height: '176px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           fontSize: '18px',
           color: '#c31911'
         }
@@ -190,7 +190,7 @@ function SidebarService($http, _) {
           left: '69px',
           width: '668px',
           height: '324px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           fontSize: '18px',
           color: '#fff'
         }
@@ -213,7 +213,7 @@ function SidebarService($http, _) {
           left: '339px',
           width: '392px',
           height: '195px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           fontSize: '18px',
           'text-align': 'left',
           'text-shadow': '4px 4px 13px rgba(0, 0, 0, 1)'
@@ -237,7 +237,7 @@ function SidebarService($http, _) {
           width: '563px',
           height: '205px',
           fontSize: '20px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           color: "#FACC3C"
         }
       },
@@ -265,7 +265,7 @@ function SidebarService($http, _) {
           width: '369px',
           height: '130px',
           fontSize: '20px',
-          fontFamily: 'inherit'
+          fontFamily: 'Roboto Slab'
         }
       },
       {
@@ -292,7 +292,7 @@ function SidebarService($http, _) {
           width: '662px',
           height: '123px',
           fontSize: '20px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           color: "#FFF"
         }
       },
@@ -320,7 +320,7 @@ function SidebarService($http, _) {
           width: '381px',
           height: '216px',
           fontSize: '20px',
-          fontFamily: 'inherit',
+          fontFamily: 'Roboto Slab',
           color: "#FFF"
         }
       }
@@ -330,7 +330,7 @@ function SidebarService($http, _) {
   service.data.selectingLayout = service.data.layouts[0];
 
   // Load google fonts
-  service.data.fontsList = ['Rancho', 'Open Sans Condensed', 'Lobster', 'Noto Serif', 'Alegreya Sans SC', 'Roboto Mono', 'Open Sans', 'Noticia Text', 'Cousine', 'Roboto Slab'];
+  service.data.fontsList = ['Roboto Slab', 'Rancho', 'Open Sans Condensed', 'Lobster', 'Noto Serif', 'Alegreya Sans SC', 'Roboto Mono', 'Open Sans', 'Noticia Text', 'Cousine'];
   WebFont.load({
     google: {
       families: service.data.fontsList
