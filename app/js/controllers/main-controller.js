@@ -7,6 +7,7 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
 
   main.sidebarData = SidebarService.data;
   main.cardMessage = "Năm mới Tết đến Rước hên vào nhà Quà cáp bao la Mọi nhà no đủ";
+  main.currentAction = 0;
 
   // Set like fanpage status default
   if(!localStorage.lct_liked){
@@ -67,19 +68,7 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
       swal({
         title: "Nhấn nút Like để tiếp tục",
         text: '<div class="fb-like" data-href="https://www.facebook.com/loichuctetynghia" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>',
-        closeOnConfirm: false,
         html: true
-      }, function(){
-        swal({
-          title: "Cảm ơn bạn đã ủng hộ nhóm phát triển!",
-          text: "Cùng <b>Lời Chúc Tết</b> chia sẻ những lời chúc tết ý nghĩa đến những người thân yêu nhất của bạn!",
-          type: "success",
-          html: true
-        }, function(){
-          if(typeof _callback == 'function' && localStorage.lct_liked === '1'){
-            _callback();
-          }
-        });
       });
     } else {
       if(typeof _callback == 'function'){
@@ -88,59 +77,75 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
     }
   };
 
-  main.downloadCard = function() {
-    var download = function(){
-      domToCanvas(function(_canvas){
-        _canvas.toBlob(function(blob) {
-          saveAs(blob, "my_card.loichuctet.net.png");
-        });
-      });
-    };
+  var share = function(){
+    domToCanvas(function(_canvas){
+      _canvas.toBlob(function(_blob) {
+        _blob.lastModifiedDate = new Date();
+        _blob.name = "loichuctet.net.png";
 
+
+        // Upload image
+        var fd = new FormData();
+        fd.append('file', _blob);
+
+        $.ajax({
+          method: "POST",
+          url: AppSettings.apiUrl + "/containers/images/upload",
+          data: fd,
+          processData: false,
+          contentType: false
+        })
+            .done(function(response) {
+              var imageUrl = AppSettings.apiUrl + "/containers/images/download/" + response.result.files.file[0].name;
+              FB.ui({
+                method: 'feed',
+                app_id: 1252568694759524,
+                link: "http://apps.loichuctet.net",
+                picture: imageUrl,
+                caption: "Gửi lời chúc tết Bính Thân đến những người thân yêu nhất của bạn",
+                redirect_uri: "http://apps.loichuctet.net"
+              }, function(response){
+                console.log("OK");
+              });
+            });
+      });
+    });
+  };
+
+  var download = function(){
+    domToCanvas(function(_canvas){
+      _canvas.toBlob(function(blob) {
+        saveAs(blob, "my_card.loichuctet.net.png");
+      });
+    });
+  };
+
+  main.downloadCard = function() {
+    main.currentAction = "download";
     likeBefore(download);
   };
 
   main.shareCard = function(){
-    var share = function(){
-      domToCanvas(function(_canvas){
-        _canvas.toBlob(function(_blob) {
-          _blob.lastModifiedDate = new Date();
-          _blob.name = "loichuctet.net.png";
-
-
-          // Upload image
-          var fd = new FormData();
-          fd.append('file', _blob);
-
-          $.ajax({
-            method: "POST",
-            url: AppSettings.apiUrl + "/containers/images/upload",
-            data: fd,
-            processData: false,
-            contentType: false
-          })
-          .done(function(response) {
-            var imageUrl = AppSettings.apiUrl + "/containers/images/download/" + response.result.files.file[0].name;
-            FB.ui({
-              method: 'feed',
-              app_id: 1252568694759524,
-              link: "http://apps.loichuctet.net",
-              picture: imageUrl,
-              caption: "Gửi lời chúc tết Bính Thân đến những người thân yêu nhất của bạn",
-              redirect_uri: "http://apps.loichuctet.net"
-            }, function(response){
-              console.log("OK");
-            });
-          });
-        });
-      });
-    };
-
+    main.currentAction = "share";
     likeBefore(share);
   };
 
   Facebook.subscribe('edge.create', function() {
     localStorage.setItem("lct_liked", '1');
+    swal({
+      title: "Cảm ơn bạn đã ủng hộ nhóm phát triển!",
+      text: "Cùng <b>Lời Chúc Tết</b> chia sẻ những lời chúc tết ý nghĩa đến những người thân yêu nhất của bạn!",
+      type: "success",
+      html: true
+    }, function(){
+      if(localStorage.lct_liked === '1'){
+        if(main.currentAction == "download"){
+          download();
+        } else if(main.currentAction == "share"){
+          share();
+        }
+      }
+    });
   });
 
   Facebook.subscribe('edge.remove', function() {
