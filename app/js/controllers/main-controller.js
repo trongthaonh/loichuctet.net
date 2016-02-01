@@ -99,6 +99,7 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
               var imageUrl = AppSettings.apiUrlUS + "/containers/images/download/" + response.result.files.file[0].name;
               FB.ui({
                 method: 'feed',
+                title: "Lời Chúc Tết 2016",
                 app_id: 1252568694759524,
                 link: "http://apps.loichuctet.net",
                 picture: imageUrl,
