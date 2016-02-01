@@ -90,7 +90,7 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
 
         $.ajax({
           method: "POST",
-          url: AppSettings.apiUrl + "/containers/images/upload",
+          url: AppSettings.apiUrlUS + "/containers/images/upload",
           data: fd,
           processData: false,
           contentType: false
