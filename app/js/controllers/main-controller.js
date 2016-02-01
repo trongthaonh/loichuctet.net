@@ -96,7 +96,7 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
           contentType: false
         })
             .done(function(response) {
-              var imageUrl = AppSettings.apiUrl + "/containers/images/download/" + response.result.files.file[0].name;
+              var imageUrl = AppSettings.apiUrlUS + "/containers/images/download/" + response.result.files.file[0].name;
               FB.ui({
                 method: 'feed',
                 app_id: 1252568694759524,
