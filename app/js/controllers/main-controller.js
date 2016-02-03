@@ -6,7 +6,6 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
   const main = this;
 
   main.sidebarData = SidebarService.data;
-  main.cardMessage = "Năm mới Tết đến Rước hên vào nhà Quà cáp bao la Mọi nhà no đủ";
   main.currentAction = 0;
 
   // Set like fanpage status default

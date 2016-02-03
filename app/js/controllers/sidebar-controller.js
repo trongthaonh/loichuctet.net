@@ -15,6 +15,11 @@ function SidebarController(SidebarService) {
     sidebar.data.selectingLayout = _layout;
   };
 
+  sidebar.selectSampleMessage = function(_message){
+    sidebar.data.message = _message.replace(/<br *\/?>/gi, '\n');
+  };
+
+
   sidebar.fileChanged = function(event) {
     sidebar.data.file = event.target.files[0];
   };

@@ -10,6 +10,11 @@
        ng-click="sidebar.selectTheTab('font')">
       <span class="icon-equalizer"></span>Chỉnh sửa </a>
   </li>
+  <li>
+    <a ng-class="{ 'active' : sidebar.data.activeTab === 'message' }"
+       ng-click="sidebar.selectTheTab('message')">
+      <span class="icon-equalizer"></span>Lời chúc</a>
+  </li>
 </ul>
 
 <div class="vertical-tabs-content active-{{ sidebar.data.activeTab }}-tab">
@@ -24,7 +29,9 @@
          ng-click="sidebar.selectTheLayout(l)">
       <img ng-src="{{ l.background.url }}">
     </div>
-  </div>
+  </div><!-- /.tab layout-tab -->
+
+
   <div class="tab font-tab form-horizontal"
        ng-class="{ 'active' : sidebar.data.activeTab === 'font' }">
     <div class="list-item image-editor">
@@ -66,6 +73,15 @@
 
     <div class="list-item color-picker-wrapper">
       <color-picker ng-model="sidebar.data.selectingLayout.messagePlaceholder.color"></color-picker>
+    </div>
+  </div><!-- /.tab font-tab -->
+
+  <div class="tab message-tab form-horizontal"
+       ng-class="{ 'active' : sidebar.data.activeTab === 'message' }">
+    <div class="list-item"
+         ng-repeat="m in sidebar.data.sampleMessages"
+         ng-click="sidebar.selectSampleMessage(m)">
+      <div ng-bind-html="m"></div>
     </div>
   </div>
 </div>

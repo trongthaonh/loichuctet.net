@@ -6,7 +6,7 @@ function SidebarService($http, _) {
   const service = {};
 
   service.data = {
-    activeTab : 'layout',
+    activeTab : 'message',
     file: null,
     dataURI: null,
     userSelectedImage: false,
@@ -324,6 +324,15 @@ function SidebarService($http, _) {
           color: "#FFF"
         }
       }
+    ],
+    message: "Năm mới Tết đến<br>Rước hên vào nhà<br>Quà cáp bao la<br>Mọi nhà no đủ".replace(/<br *\/?>/gi, '\n'),
+    sampleMessages: [
+      "Đây là lời chúc mẫu 1<br>Xuống hàng Roboto Slab Roboto Slab",
+      "Đây là lời chúc mẫu 2<br>Xuống hàng Roboto Slab <br>Xuống hàng Roboto Slab Roboto Slab Roboto Slab Roboto Slab",
+      "Đây là lời chúc mẫu 3<br>Xuống hàng Roboto Slab Roboto Slab Roboto Slab Roboto Slab",
+      "Đây là lời chúc mẫu 4<br>Xuống hàng Roboto Slab Roboto Slab Roboto Slab <br>Xuống hàng Roboto Slab Roboto Slab Roboto Slab Roboto Slab",
+      "Đây là lời chúc mẫu 5<br>Xuống hàng Roboto Slab Roboto Slab",
+      "Đây là lời chúc mẫu 6<br>Xuống hàng Roboto Slab <br>Xuống hàng Roboto Slab Roboto Slab Roboto Slab Roboto Slab"
     ]
   };
 

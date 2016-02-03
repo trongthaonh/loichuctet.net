@@ -80,6 +80,7 @@
     "angular-color-picker": "*",
     "angular-cropper": "^0.8.3",
     "angular-resource": "^1.4.8",
+    "angular-sanitize": "^1.4.8",
     "angularjs-facebook": "^0.2.3",
     "express": "^4.13.3",
     "facebook-photo-selector": "0.0.9",

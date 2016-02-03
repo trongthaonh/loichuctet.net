@@ -5,6 +5,7 @@ import angular from 'angular';
 // angular modules
 import 'angular-ui-router';
 import 'angular-resource';
+import 'angular-sanitize';
 import './templates';
 import './filters';
 import './controllers';
@@ -30,6 +31,7 @@ const requires = [
   'app.directives',
   'tw.directives.cropper',
   'ngResource',
+  'ngSanitize',
   'facebook',
   'mp.colorPicker'
 ];
