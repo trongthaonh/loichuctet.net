@@ -1,7 +1,7 @@
 'use strict';
 
 const AppSettings = {
-  appTitle: 'Example Application',
+  appTitle: 'Thiệp Tết - Lời Chúc Tết 2016',
   apiUrl: 'https://cdn.loichuctet.net/resources',
   apiUrlUS: 'http://cdn.loichuctet.net/resources'
 };
