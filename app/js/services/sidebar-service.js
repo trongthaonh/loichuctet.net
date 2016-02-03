@@ -6,7 +6,7 @@ function SidebarService($http, _) {
   const service = {};
 
   service.data = {
-    activeTab : 'message',
+    activeTab : 'layout',
     file: null,
     dataURI: null,
     userSelectedImage: false,
