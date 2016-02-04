@@ -76,7 +76,18 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
     }
   };
 
-  var share = function(){
+  var likePopup = function(){
+    if(localStorage.lct_liked === '0'){
+      Facebook.parseXFBML();
+      swal({
+        title: "Nhấn nút Like để ủng hộ LoiChucTet.Net",
+        text: '<div class="fb-like" data-href="https://www.facebook.com/loichuctetynghia" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>',
+        html: true
+      });
+    }
+  };
+
+  var share = function(_callback){
     domToCanvas(function(_canvas){
       _canvas.toBlob(function(_blob) {
         _blob.lastModifiedDate = new Date();
@@ -94,40 +105,44 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
           processData: false,
           contentType: false
         })
-            .done(function(response) {
-              var imageUrl = AppSettings.apiUrlUS + "/containers/images/download/" + response.result.files.file[0].name;
-              FB.ui({
-                method: 'feed',
-                title: "Lời Chúc Tết 2016",
-                app_id: 1252568694759524,
-                link: "http://apps.loichuctet.net",
-                picture: imageUrl,
-                caption: "Gửi lời chúc tết Bính Thân đến những người thân yêu nhất của bạn",
-                redirect_uri: "http://apps.loichuctet.net"
-              }, function(response){
-                console.log("OK");
-              });
-            });
+        .done(function(response) {
+          var imageUrl = AppSettings.apiUrlUS + "/containers/images/download/" + response.result.files.file[0].name;
+          FB.ui({
+            method: 'feed',
+            title: "Lời Chúc Tết 2016",
+            app_id: 1252568694759524,
+            link: "http://apps.loichuctet.net",
+            picture: imageUrl,
+            caption: "Gửi lời chúc tết Bính Thân đến những người thân yêu nhất của bạn",
+            redirect_uri: "http://apps.loichuctet.net"
+          }, function(response){
+            if(typeof _callback == 'function'){
+              _callback();
+            }
+          });
+        });
       });
     });
   };
 
-  var download = function(){
+  var download = function(_callback){
     domToCanvas(function(_canvas){
       _canvas.toBlob(function(blob) {
         saveAs(blob, "my_card.loichuctet.net.png");
+
+        if(typeof _callback == 'function'){
+          _callback();
+        }
       });
     });
   };
 
   main.downloadCard = function() {
-    main.currentAction = "download";
-    likeBefore(download);
+    download(likePopup);
   };
 
   main.shareCard = function(){
-    main.currentAction = "share";
-    likeBefore(share);
+    share(likePopup);
   };
 
   Facebook.subscribe('edge.create', function() {
@@ -137,20 +152,13 @@ function MainController(SidebarService, Html2CanvasService, Facebook, $, AppSett
       text: "Cùng <b>Lời Chúc Tết</b> chia sẻ những lời chúc tết ý nghĩa đến những người thân yêu nhất của bạn!",
       type: "success",
       html: true
-    }, function(){
-      if(localStorage.lct_liked === '1'){
-        if(main.currentAction == "download"){
-          download();
-        } else if(main.currentAction == "share"){
-          share();
-        }
-      }
     });
   });
 
   Facebook.subscribe('edge.remove', function() {
     localStorage.setItem("lct_liked", '0');
   });
+
 }
 
 export default {
